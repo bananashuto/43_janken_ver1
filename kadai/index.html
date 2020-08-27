@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Spock</title>
+</head>
+
+
+<body>
+    <div class="wrapper">
+
+        <!-- プレイヤー表示 -->
+        <section>
+            <div class="VScontent">
+                <p>YOU ARE ...<span id="YourHands">What?</span> </p>
+                <p>SHELDON IS ...<span id="SheldonHands">What?</span> </p>
+            </div>
+        </section>
+
+
+        <!-- プレイスタート！！！ -->
+        <section>
+            <div class="PlayStartWrapper">
+                <p class="PlayGameTitle">PLAY GAME</p>
+                <div class="logoBox">
+                    <div class="BTlogo"></div>
+                </div>
+                <p class="PlayGameText_2">Rock Paper Scissors Spock Lizard
+
+                </p> 
+            </div>
+        </section>
+
+
+
+        <!-- じゃんけんアイテム -->
+            <section class="Hand">
+                <div class="Handwrapper">
+                    <div class="HandContent">
+                        <div id="Guuitem"> </div>
+                        <p>Rock</p>
+                    </div>
+                    <div class="HandContent">
+                        <div id="Paritem"> </div>
+                        <p>Paper</p>
+                    </div>
+                    <div class="HandContent">
+                        <div id="Spockitem"> </div>
+                        <p>Spock</p>
+                    </div>
+                    <div class="HandContent">
+                        <div id="Lizarditem"> </div>
+                        <p>Lizard</p>
+                    </div>
+                    <div class="HandContent">
+                        <div id="Choitem"> </div>
+                        <p>Scissors</p>
+                    </div>
+                </div>
+            </section>
+
+        <!-- スコア表示 -->
+            <section>
+                <div class="Scorewrapper">
+                    <p>SCORE：</p>
+                    <ul class="Star">
+                        <li></li>
+                        <!-- <li>☆</li>
+                        <li>☆</li>
+                        <li>☆</li>
+                        <li>☆</li>
+                        <li>☆</li>
+                        <li>☆</li>
+                        <li>☆</li>
+                        <li>☆</li>
+                        <li>☆</li> -->
+                    </ul>
+                </div>
+
+            </section>  
+
+
+
+
+
+
+        <!-- 背景のスポックとシェルドン -->
+
+        <!-- <section class="BackImg">
+            <div class="SpockImg"></div>       
+            <div class="SheldonImg"></div>
+        </section> -->
+
+
+        <!-- ルールブック -->
+        <section>
+            <div class="rulewrapper">
+                <div class="ruleitem"></div>
+                <div class="ruletext">
+                    <h2>トカゲスポックじゃんけん</h2>
+                    <p>はさみは紙を切り、紙は石をつつみ、<br>
+                        石はとかげを潰し、トカゲはスポックに毒、<br>
+                        スポックははさみを破壊、<br>
+                        はさみはトカゲをちょんぎる、<br>
+                        トカゲは紙を食べる、<br>
+                        紙はスポックに抗議し、<br>
+                        スポックは石を蒸発させる、<br>
+                        で、当然石ははさみを壊す。<br>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section>
+            <div class="youtube">
+                <iframe width="700" 
+                height="400" 
+                src="https://www.youtube.com/embed/Z2Dwxv-EMTM?start=13" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+            </div>
+        </section>
+
+  
+
+
+
+
+
+        <!-- //ーーーーーーーーーー勝ちポップアップーーーーーーーーーーーーーーーーーーーー// -->
+        <div class="Winpopup">
+            <div class="WinContent">
+                <!-- <button id="WinReplay">REPLAY</button> -->
+            </div>
+        </div>
+
+
+        <!-- //ーーーーーーーーーーあいこポップアップーーーーーーーーーーーーーーーーーーーー// -->
+        <div class="Drawpopup">
+            <div class="DrawContent">
+                <!-- <button id="DrawReplay">REPLAY</button> -->
+            </div>
+        </div>
+
+        <!-- //ーーーーーーーーーー負けポップアップーーーーーーーーーーーーーーーーーーーー// -->
+        <div class="Loserpopup">
+            <div class="LoserContent">
+                <!-- <button id="LoserReplay">REPLAY</button> -->
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!--ーーーーーーーーーー--
+          ここからJavascript 
+        ーーーーーーーーーーー-->
+    <script>
+
+
+
+
+
+    // グーをおす
+        $("#Guuitem").on("click",function(){
+            $('.BTlogo').addClass('removelogo');     
+            
+            const num = Math.ceil( Math.random() * 5);
+                if(num ==1){ //相手がグーなら
+                $("#YourHands").html("Rock");
+                $("#SheldonHands").html("Rock");
+                $('.Drawpopup').addClass('show').fadeIn();//あいこポップアップ
+                $('.Drawpopup').delay(600).fadeOut(1000);//あいこフェードアウト
+                      
+                }
+
+
+
+                if(num ==2 ){  //相手がチョキなら
+                $("#YourHands").html("Rock");
+                $("#SheldonHands").html("Scissors");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+                }
+
+                if(num ==3){  //相手がパーなら
+                $("#YourHands").html("Rock");
+                $("#SheldonHands").html("Paper");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+
+                if(num ==4){  //相手がトカゲなら
+                $("#YourHands").html("Rock");
+                $("#SheldonHands").html("Lizard");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+
+                }
+
+                if(num ==5){ //相手がスポックなら
+                $("#YourHands").html("Rock");
+                $("#SheldonHands").html("Scissors");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+        });
+
+
+    //パーをおす
+        $("#Paritem").on("click",function(){
+            $('.BTlogo').addClass('removelogo');    
+            const num = Math.ceil( Math.random() * 5);
+                if(num ==1){ //相手がグーなら
+                $("#YourHands").html("Paper");
+                $("#SheldonHands").html("Rock");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+                }
+
+                if(num ==2){  //相手がチョキなら
+                $("#YourHands").html("Paper");
+                $("#SheldonHands").html("Scissors");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+
+                if(num ==3){  //相手がパーなら
+                $("#YourHands").html("Paper");
+                $("#SheldonHands").html("Paper");
+                $('.Drawpopup').addClass('show').fadeIn();//あいこポップアップ
+                $('.Drawpopup').delay(600).fadeOut(1000);//あいこフェードアウト
+                }
+
+                if(num ==4){  //相手がトカゲなら
+                $("#YourHands").html("Paper");
+                $("#SheldonHands").html("Lizard");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+
+                if(num ==5){ //相手がスポックなら
+                $("#YourHands").html("Paper");
+                $("#SheldonHands").html("Scissors");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+                }
+        });
+
+
+        //スポックをおす
+        $("#Spockitem").on("click",function(){
+            $('.BTlogo').addClass('removelogo');    
+            const num = Math.ceil( Math.random() * 5);
+                if(num ==1){ //相手がグーなら
+                $("#YourHands").html("Spock");
+                $("#SheldonHands").html("Rock");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+                }
+
+                if(num ==2){  //相手がチョキなら
+                $("#YourHands").html("Spock");
+                $("#SheldonHands").html("Scissors");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+                }
+
+                if(num ==3){  //相手がパーなら
+                $("#YourHands").html("Spock");
+                $("#SheldonHands").html("Paper");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+
+                if(num ==4){  //相手がトカゲなら
+                $("#YourHands").html("Spock");
+                $("#SheldonHands").html("Lizard");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+
+                if(num ==5){ //相手がスポックなら
+                $("#YourHands").html("Spock");
+                $("#SheldonHands").html("Scissors");
+                $('.Drawpopup').addClass('show').fadeIn();//あいこポップアップ
+                $('.Drawpopup').delay(600).fadeOut(1000);//あいこフェードアウト
+                }
+        });
+
+
+        //トカゲをおす
+        $("#Lizarditem").on("click",function(){
+            $('.BTlogo').addClass('removelogo');    
+            const num = Math.ceil( Math.random() * 5);
+                if(num ==1){ //相手がグーなら
+                $("#YourHands").html("Lizard");
+                $("#SheldonHands").html("Rock");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+
+                if(num ==2){  //相手がチョキなら
+                $("#YourHands").html("Lizard");
+                $("#SheldonHands").html("Scissors");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+
+                if(num ==3){  //相手がパーなら
+                $("#YourHands").html("Lizard");
+                $("#SheldonHands").html("Paper");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+                }
+
+                if(num ==4){  //相手がトカゲなら
+                $("#YourHands").html("Lizard");
+                $("#SheldonHands").html("Lizard");
+                $('.Drawpopup').addClass('show').fadeIn();//あいこポップアップ
+                $('.Drawpopup').delay(600).fadeOut(1000);//あいこフェードアウト
+                }
+
+                if(num ==5){ //相手がスポックなら
+                $("#YourHands").html("Lizard");
+                $("#SheldonHands").html("Scissors");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+                }
+        });
+
+            //チョキをおす
+            $("#Choitem").on("click",function(){
+            $('.BTlogo').addClass('removelogo');    
+            const num = Math.ceil( Math.random() * 5);
+                if(num ==1){ //相手がグーなら
+                $("#YourHands").html("Scissors");
+                $("#SheldonHands").html("Rock");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+
+                if(num ==2){  //相手がチョキなら
+                $("#YourHands").html("Scissors");
+                $("#SheldonHands").html("Scissors");
+                $('.Loserpopup').addClass('show').fadeIn();//負けポップアップ
+                $('.Loserpopup').delay(600).fadeOut(1000);//負けフェードアウト
+                $(".Scorewrapper ul").empty();//全滅全滅全滅全滅全滅
+                }
+
+                if(num ==3){  //相手がパーなら
+                $("#YourHands").html("Scissors");
+                $("#SheldonHands").html("Paper");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+                }
+
+                if(num ==4){  //相手がトカゲなら
+                $("#YourHands").html("Scissors");
+                $("#SheldonHands").html("Lizard");
+                $('.Winpopup').addClass('show').fadeIn();//勝ちポップアップ
+                $('.Winpopup').delay(600).fadeOut(1000);//勝ちフェードアウト
+                $(".Scorewrapper ul").prepend("★");//★★★★★★★★★★★★★★★★★★★
+                }
+
+                if(num ==5){ //相手がスポックなら
+                $("#YourHands").html("Scissors");
+                $("#SheldonHands").html("Scissors");
+                $('.Drawpopup').addClass('show').fadeIn();//あいこポップアップ
+                $('.Drawpopup').delay(600).fadeOut(1000);//あいこフェードアウト
+                }
+                
+        });
+
+
+
+
+    //ーーーーーーーーーー閉じるボタンーーーーーーーーーーーーーーーーーーーー//
+
+    
+            // $('#WinReplay').on('click',function(){
+            //     $('.Winpopup').fadeOut();
+            // });
+
+            // $('#DrawReplay').on('click',function(){
+            //     $('.Drawpopup').fadeOut();
+            // });
+
+            // $('#LoserReplay').on('click',function(){
+            //     $('.Loserpopup').fadeOut();
+            // });
+
+    //ーーーーーーーーーー閉じるボタンーーーーーーーーーーーーーーーーーーーー//
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

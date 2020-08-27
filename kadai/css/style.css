@@ -1,0 +1,477 @@
+body{
+    background-color: rgb(17, 8, 62);
+
+}
+
+.wrapper{
+    width: 1350px;
+    height: 2100px;
+    background-image: url(../img_2/haikei_002.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* ーーーーーーーーーー
+         VS 
+ーーーーーーーーーーーー */
+
+
+.VScontent{
+display: flex;
+justify-content: space-between;
+font-size: 35px;
+color: rgb(255, 255, 255);
+padding: 0 100px;
+}
+
+
+#YourHands{
+    color: #ED8C00;
+
+}
+#SheldonHands{
+    color: #ED8C00;
+}
+
+
+/* ーーーーーーーーーー
+    Play Game!!!
+ーーーーーーーーーーーー */
+.PlayStartWrapper{
+    text-align: center;
+}
+
+.PlayGameTitle{
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    width: 180px;
+    border-radius: 10px;
+    background-color: brown;
+    margin: 100px auto 0px ;
+    cursor: pointer;
+}
+.PlayGameTitle:hover {
+    /* border-radius: 73px; */
+    transform: translate(0, -2px);
+   }
+
+
+
+
+.BTlogo{
+    opacity: 0.8;
+    margin: 20px auto 0px ;
+    width: 70px;
+    height: 78px;
+    background-image: url(../img_2/center/BT_logo.png);
+    background-position: center;
+    background-size: cover;
+   
+}
+.BTlogo{
+    animation:20s linear infinite rotation1;
+  }
+@keyframes rotation1{
+    0%{ transform:rotate(0);}
+    100%{ transform:rotate(360deg); }
+  }
+
+.removelogo{
+      opacity: 0 ;
+    }
+.showlogo{
+    opacity: 1 ;
+    }
+
+
+
+
+.PlayGameText_2{
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+
+
+
+
+/* ーーーーーーーーーー
+じゃんけんアイテム
+ーーーーーーーーーーーー */
+
+.Handwrapper{
+    width: 850px;
+    display: flex;
+    justify-content:space-between;
+    margin: 0 auto;
+
+}
+
+.HandContent{
+    width: 150px;
+    height: 200px;
+    /* background-color: tomato; */
+}
+
+#Guuitem{
+    width: 150px;
+    height: 150px;
+    background-image: url(../img_2/item/guu_item.png);
+    background-position: right;
+    background-size: cover;
+    cursor: pointer;
+
+}
+#Guuitem:hover {
+ border-radius: 73px;
+ transform: translate(0, -2px);
+}
+#Guuitem:active{
+    border-radius: 74px;
+    transform: translate(0, 0px);
+    /* background-blend-mode: multiply; */
+    background-blend-mode: exclusion;
+    /* background-blend-mode: screen; */
+    background-color: #18eb65;
+}
+
+
+
+.HandContent p{
+    color: #0B0D88;
+    font-size: 35px;
+    text-align: center;
+    margin: 10px auto;
+    background-color: #ED8C00;
+    border-radius: 5px;
+    font-family:"impact";
+    font-weight: bolder;
+}
+
+#Paritem{
+    width: 150px;
+    height: 150px;
+    background-image: url(../img_2/item/par_item.png);
+    background-position: right;
+    background-size: cover;
+    cursor: pointer;
+}
+#Paritem:hover {
+    border-radius: 73px;
+    transform: translate(0, -5px);
+   }
+
+#Paritem:active{
+border-radius: 74px;
+transform: translate(0, 0px);
+/* background-blend-mode: multiply; */
+background-blend-mode: exclusion;
+/* background-blend-mode: screen; */
+background-color: #18eb65;
+}
+
+
+
+
+#Spockitem{
+    width: 150px;
+    height: 150px;
+    background-image: url(../img_2/item/Spock_item.png);
+    background-position: right;
+    background-size: cover;
+    cursor: pointer;
+}
+#Spockitem:hover {
+    border-radius: 73px;
+    transform: translate(0, -5px);
+   }
+#Spockitem:active{
+border-radius: 74px;
+transform: translate(0, 0px);
+/* background-blend-mode: multiply; */
+background-blend-mode: exclusion;
+/* background-blend-mode: screen; */
+background-color: #18eb65;
+}
+
+
+#Lizarditem{
+    width: 150px;
+    height: 150px;
+    background-image: url(../img_2/item/Lizard_item.png);
+    background-position: right;
+    background-size: cover;
+    cursor: pointer;
+}
+#Lizarditem:hover {
+    border-radius: 73px;
+    transform: translate(0, -5px);
+   }
+
+#Lizarditem:active{
+border-radius: 74px;
+transform: translate(0, 0px);
+/* background-blend-mode: multiply; */
+background-blend-mode: exclusion;
+/* background-blend-mode: screen; */
+background-color: #18eb65;
+}
+
+
+#Choitem{
+    width: 150px;
+    height: 150px;
+    background-image: url(../img_2/item/cho_item.png);
+    background-position: right;
+    background-size: cover;
+    cursor: pointer;
+}
+#Choitem:hover {
+    border-radius: 73px;
+    transform: translate(0, -5px);
+   }
+
+#Choitem:active{
+border-radius: 74px;
+transform: translate(0, 0px);
+/* background-blend-mode: multiply; */
+background-blend-mode: exclusion;
+/* background-blend-mode: screen; */
+background-color: #18eb65;
+}
+
+
+/* ーーーーーーーーーー
+        スコア
+ーーーーーーーーーーーー */
+
+.Scorewrapper{
+    width: 700px;
+    height: 50px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* background-color: rgb(94, 50, 94); */
+}
+
+.Scorewrapper p{
+    font-size: 44px;
+    color: #ffffff;
+    text-shadow: #ED8C00;
+    text-shadow: 2px;
+    
+    
+}
+
+.Scorewrapper ul{
+    padding-left: 30px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 35px;
+    color: #ffff06;
+    font-weight: lighter;
+    letter-spacing: 5px;
+    /* background-color: rgb(255, 29, 255); */
+    
+}
+
+.Scorewrapper li{
+    font-size: 35px;
+    color: #1a0d6a;
+    font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+/* ーーーーーーーーーー
+背景のスポックとシェルどん
+ーーーーーーーーーーーー */
+
+/* .BackImg{
+    margin-top: -600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SpockImg{
+    width: 510px;
+    height: 560px;
+    background-image: url(../img_2/spock_1.png);
+    background-position: right;
+    background-size: cover;
+}
+.SheldonImg{
+    width: 450px;
+    height: 560px;
+    background-image: url(../img_2/sheldon_1.png);
+    background-position: top left;
+    background-size: cover;
+} */
+
+
+
+
+
+/* ーーーーーーーーーー
+    ルールブック
+ーーーーーーーーーーーー */
+
+
+.rulewrapper{
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: darkcyan; */
+}
+
+.ruleitem{
+    width: 410px;
+    height: 400px;
+    background-image: url(../img_2/rule/rule_001.png);
+    background-position: right;
+    background-size: cover;
+}
+
+.ruletext{
+    color: rgb(255, 255, 255);
+    font-family: serif;
+    width: 400px;
+    height: 400px;
+    padding-left: 70px;
+    line-height: 32px;
+    padding-top: 60px;
+}
+
+.ruletext h2{
+    letter-spacing: 2px; 
+}
+
+
+.ruletext p{
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+.youtube{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+/* ーーーーーーーーーー
+    ポップアップ
+ーーーーーーーーーーーー */
+
+
+.Winpopup {
+    display: none;
+    height: 1200px;
+    margin: 0 auto;
+    margin-top: -2150px;
+    /* background: black; */
+    /* background-blend-mode: multiply; */
+    /* opacity: 0.9; */
+    /* position: fixed; */
+    /* top:  0;
+    left: 0; */
+    /* background-color: tomato; */
+}
+ 
+.WinContent{
+    /* background: #fff; */
+    background-image: url(../img_2/result/winner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 550px;
+    height: 244px;
+
+}
+
+.Drawpopup {
+    display: none;
+    height: 1200px;
+    margin: 0 auto;
+    margin-top: -2150px;
+    /* background: black; */
+    /* opacity: 1; */
+    /* position: fixed; */
+    /* top:  0;
+
+    left: 0; */
+    /* background-color: tomato; */
+}
+ 
+.DrawContent{
+    
+    /* background: #fff; */
+    background-image: url(../img_2/result/draw_2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 190px;
+
+}
+
+.Loserpopup {
+    display: none;
+    height: 1200px;
+    margin: 0 auto;
+    margin-top: -2150px;
+    /* background: black; */
+    /* opacity: 1; */
+    /* position: fixed; */
+    /* top:  0;
+    
+    left: 0; */
+    /* background-color: tomato; */
+}
+ 
+.LoserContent{
+    /* background: #fff; */
+    background-image: url(../img_2/result/loser.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 200px;
+
+}
+
+
+
+.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
